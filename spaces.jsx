@@ -39,7 +39,26 @@ export const render = ({ output }, ...args) => {
     );
   }
   const displayId = Number(window.location.pathname.replace(/\//g, ''));
+  if(data && data.spaces){
+//  data.spaces[0].index='V²'
+  data.spaces[0].index='􀌥'//office
+  data.spaces[1].index='􀈖'
+  data.spaces[3].index='􀙚'
+  data.spaces[4].index='􀢾'
+  data.spaces[5].index='􀖅'
+  //data.spaces[2].index='℮⁴'
+  data.spaces[2].index='􀎸'
+  data.spaces[6].index='􀟱'
+  data.spaces[7].index='􀗗'
+  }
+  //data.spaces[0].display='Terminal'
+  //data.spaces[1].display='Browse'
+ // data.spaces[3].display='Office'
+  //data.spaces[6].display='Zoom'
   const display = data.displays.find(d => d.id === displayId);
+  
+
+
   return (
     <div style={style}>
       <Desktop output={data.spaces.filter(s => s.display === display.index)} />
